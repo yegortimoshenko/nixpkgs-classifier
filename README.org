@@ -35,10 +35,20 @@ More about edn format here: https://github.com/edn-format/edn
 
 ** Deployment
 
-You will need AWS account and Maven. Build via ~mvn package~, add a new AWS
-Lambda function targeting Java 8 runtime, upload jar-with-dependencies and save
-the function. After that, create a new empty AWS API Gateway, add a POST
-resource, attach previously created AWS Lambda to it, create a new stage and
+You will need AWS account, GitHub account and Maven.
+
+Build via ~mvn package~.
+
+[[https://github.com/settings/tokens/new][Issue a GitHub token]] with ~public_repo~ capability.
+
+Add a new AWS Lambda function targeting Java 8 runtime, upload
+jar-with-dependencies, specify
+~yegortimoshenko.nixpkgs.classifier::handleRequest~ as handler, add
+~GITHUB_TOKEN~ environment variable that contains the token issued in the
+previous step, and save the function.
+
+Then, create an empty AWS API Gateway, add a POST resource, attach AWS Lambda
+function created in the previous step to the resource, create a new stage and
 deploy it.
 
 You should get URL that is usable as a GitHub webhook. Choose ~application/json~
