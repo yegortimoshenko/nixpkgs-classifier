@@ -1,0 +1,21 @@
+Issue and pull request labeling bot for [[https://github.com/NixOS/nixpkgs][NixOS/nixpkgs]].
+
+** Rationale
+
+Labels are more useful than search queries for filtering through
+issues. However, labeling is menial, and typically not thorough enough.
+
+** Changing labeling rules
+
+Change [[file:src/main/resources/ruleset.edn][ruleset.edn]] right from GitHub interface and open a pull request.
+
+** Deployment
+
+You will need AWS account and Maven. Build via ~mvn deploy~, add a new AWS
+Lambda function targeting Java 8 runtime, upload jar-with-dependencies and save
+the function. After that, create a new empty AWS API Gateway, add a POST
+resource, attach previously created AWS Lambda to it, create a new stage and
+deploy it.
+
+You should get URL that is usable as a GitHub webhook. Choose ~application/json~
+content type, and only send Issues and Pull request events to the bot.
