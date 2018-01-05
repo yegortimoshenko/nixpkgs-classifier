@@ -35,8 +35,7 @@
   (= action "opened"))
 
 (defn handle [payload]
-  (let [{:strs [GITHUB_TOKEN]} (System/getenv)
-        ticket (or )]
+  (let [{:strs [GITHUB_TOKEN]} (System/getenv)]
     (when (new-issue? payload)
       (classify-issue GITHUB_TOKEN payload))))
 
