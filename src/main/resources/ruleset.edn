@@ -1,0 +1,46 @@
+{"0.kind: bug" ["breaks"
+                "broken"
+                "can't be built"
+                "can't find"
+                "doesn't build"
+                "does not build"
+                "doesn't run"
+                "does not run"
+                "doesn't start"
+                "does not start"
+                "doesn't work"
+                "does not work"
+                "fails"
+                "failing"
+                "failure"
+                "failures"
+                "invalid"
+                "missing"
+                "not building"
+                "not working"
+                "stopped working"]
+ "0.kind: question" [#"\A.*\?\z"]
+ "1.severity: security" ["CVE"]
+ "6.topic: darwin" ["Darwin" "macOS" "OSX" "OS X"]
+ "6.topic: emacs" ["Emacs"]
+ "6.topic: erlang" ["Erlang"]
+ "6.topic: fetch" ["fetchurl" "fetchzip" "fetchFromGitHub"]
+ "6.topic: golang" ["Go"]
+ "6.topic: gnome3" ["GNOME"]
+ "6.topic: haskell" ["Haskell" "GHC"]
+ "6.topic: kernel" ["kernel"]
+ "6.topic: nixos" ["module" "NixOS" "nixos-option" "nixos-rebuild" "option"]
+ "6.topic: non-nixos" ["non-NixOS"]
+ "6.topic: ocaml" ["OCaml"]
+ "6.topic: python" ["Python"]
+ "6.topic: qt/kde" ["Qt" "KDE"]
+ "6.topic: ruby" ["Ruby"]
+ "6.topic: rust" ["Rust"]
+ "6.topic: steam" ["Steam"]
+ "6.topic: vim" ["Vim"]
+ "6.topic: windows" ["Windows"]
+ "6.topic: xfce" ["Xfce"]
+ "8.has: clean-up" ["cleanup"]
+ "8.has: package (new)" ["init at"]
+ "8.has: package (update)" ["->" "→" "update"]
+ "9.needs: package (new)" ["Package request"]}
