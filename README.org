@@ -3,11 +3,19 @@ Issue and pull request labeling bot for [[https://github.com/NixOS/nixpkgs][NixO
 ** Rationale
 
 Labels are more useful than search queries for filtering through
-issues. However, labeling is menial, and typically not thorough enough.
+issues. However, labeling is menial, and is never thorough enough. Most issues
+are left untagged, and that makes it harder for Nixpkgs maintainers to find
+issues that are relevant to them.
 
 ** Changing labeling rules
 
 Change [[file:src/main/resources/ruleset.edn][ruleset.edn]] right from GitHub interface and open a pull request.
+
+Ruleset is a map from label names to vectors of rules. Rules can be either
+strings (case-insensitive match with non-word ~\W~ boundaries) or regexes, and
+label is added if any of the rules attached to it match the issue title.
+
+More about edn format here: https://github.com/edn-format/edn
 
 ** Deployment
 
@@ -18,4 +26,4 @@ resource, attach previously created AWS Lambda to it, create a new stage and
 deploy it.
 
 You should get URL that is usable as a GitHub webhook. Choose ~application/json~
-content type, and only send Issues and Pull request events to the bot.
+content type, and choose to only send Issues and Pull request events.
