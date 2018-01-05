@@ -23,10 +23,10 @@
   (map first (filter-by-val (partial some (partial match-rule title)) (read-ruleset))))
 
 (defn github-classify [token {:strs [issue pull_request]}]
-  (let [{:strs [title url]} (or issue pull_request)]
+  (let [{:strs [issue_url title url]} (or issue pull_request)]
     (http/request {:body (json/write-str (classify title))
                    :headers {:authorization [(str "token " token)]}}
-                  (str url "/labels"))))
+                  (str (or issue_url url) "/labels"))))
 
 (defn new-ticket? [{:strs [action]}]
   (= action "opened"))
