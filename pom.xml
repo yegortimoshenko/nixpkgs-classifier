@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.yegortimoshenko</groupId>
   <artifactId>nixpkgs.classifier</artifactId>
-  <version>20180105.034849</version>
+  <version>20180105.041504</version>
   <name>nixpkgs-classifier</name>
   <dependencies>
     <dependency>
