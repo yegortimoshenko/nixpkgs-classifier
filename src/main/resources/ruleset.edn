@@ -42,5 +42,5 @@
  "6.topic: xfce" ["Xfce"]
  "8.has: clean-up" ["cleanup"]
  "8.has: package (new)" ["init at"]
- "8.has: package (update)" ["->" "→" "update"]
+ "8.has: package (update)" ["->" "→"]
  "9.needs: package (new)" ["Package request"]}
