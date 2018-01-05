@@ -5,13 +5,13 @@
             [clojure.string :as str]
             [yegortimoshenko.io.http :as http]))
 
-(defn simplify-rule [rule]
+(defn expand-rule [rule]
   (if (string? rule)
-    (re-pattern (str "(?i)(\\s|^)" (str/lower-case rule) "(\\s|$)"))
+    (re-pattern (str "(?i)(\\W|^)" (str/lower-case rule) "(\\W|$)"))
     (identity rule)))
 
 (defn match-rule [title rule]
-  (re-find (simplify-rule rule) title))
+  (re-find (expand-rule rule) title))
 
 (defn read-ruleset []
   (read-string (slurp (io/resource "ruleset.edn"))))
