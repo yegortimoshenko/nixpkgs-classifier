@@ -22,23 +22,23 @@
 (defn classify [s]
   (map first (filter-by-val (partial some (partial match-rule s)) (read-ruleset))))
 
-(defn issue-label [token url labels]
+(defn label-issue [token url labels]
   (http/request {:body (json/write-str labels)
                  :headers {:authorization [(format "token %s" token)]}}
                 (str url "/labels")))
 
-(defn issue-classify [token {:strs [issue pull_request]}]
+(defn classify-issue [token {:strs [issue pull_request]}]
   (let [{:strs [title issue_url url]} (or issue pull_request)]
-    (issue-label token (or issue_url url) (classify title))))
+    (label-issue token (or issue_url url) (classify title))))
 
-(defn issue-opened? [{:strs [action]}]
+(defn new-issue? [{:strs [action]}]
   (= action "opened"))
 
 (defn handle [payload]
   (let [{:strs [GITHUB_TOKEN]} (System/getenv)
         ticket (or )]
-    (when (issue-opened? payload)
-      (issue-classify GITHUB_TOKEN payload))))
+    (when (new-issue? payload)
+      (classify-issue GITHUB_TOKEN payload))))
 
 (defn -handleRequest [_ input ctx]
   (handle input))
