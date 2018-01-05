@@ -20,8 +20,8 @@ and probability of it being relevant enough for labeling is much smaller, so
 much that it would warrant a Bayesian classifier. Instead, it uses a simplistic
 ruleset matcher.
 
-It is written in 45 lines of Clojure, implemented as an AWS Lambda function,
-meaning it's [[https://en.wikipedia.org/wiki/Serverless_computing][serverless]], i.e. only runs upon request (hi, PHP).
+Implemented as an AWS Lambda function (i.e. [[https://en.wikipedia.org/wiki/Serverless_computing][serverless]]). Written in 45 lines of
+Clojure. Leverages new [[https://clojure.org/reference/deps_and_cli][Clojure CLI]].
 
 ** Changing labeling rules
 
