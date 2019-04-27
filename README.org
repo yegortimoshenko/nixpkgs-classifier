@@ -51,4 +51,4 @@
    boundaries) or regexes, and label is added if any of the rules
    attached to it matches the issue title.
 
-   More about edn format here: https://github.com/edn-format/edn
+   More about edn format here: [[https://github.com/edn-format/edn]]
