@@ -7,10 +7,10 @@
 
    Most Nixpkgs issue and pull request titles follow specific patterns
    that can be used to infer relevant labels with a high degree of
-   certainty: for example, package updates typically follow ~foo: 1.0
-   -> 1.1~ layout, and new packages typically follow ~foo: init at
-   1.0~ layout; issues that have ~6.topic~ label typically contain
-   specific words in the title related to that topic, etc.
+   certainty: for example, package updates typically follow ~foo: 1.0 -> 1.1~
+   layout, and new packages typically follow ~foo: init at 1.0~ layout; issues
+   that have ~6.topic~ label typically contain specific words in the title
+   related to that topic, etc.
 
 ** Setup
 
