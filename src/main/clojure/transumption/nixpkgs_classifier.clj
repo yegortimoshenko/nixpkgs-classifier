@@ -1,4 +1,4 @@
-(ns yegortimoshenko.nixpkgs.classifier
+(ns transumption.nixpkgs-classifier
   (:gen-class :implements [com.amazonaws.services.lambda.runtime.RequestHandler])
   (:require [clojure.data.json :as json]
             [clojure.java.io :as io]

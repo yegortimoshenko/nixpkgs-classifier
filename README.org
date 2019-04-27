@@ -22,7 +22,7 @@
 
    Add a new AWS Lambda function targeting Java 8 runtime, upload
    jar-with-dependencies, specify
-   ~yegortimoshenko.nixpkgs.classifier::handleRequest~ as handler, add
+   ~transumption.nixpkgs-classifier::handleRequest~ as handler, add
    ~GITHUB_TOKEN~ environment variable that contains the token issued
    in the previous step, and save the function.
 
